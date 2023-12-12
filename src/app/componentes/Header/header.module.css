@@ -1,0 +1,37 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  padding-block: 2.5em;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+
+.backToTitle {
+  font-size: 2em;
+  font-weight: 700;
+  color: black;
+}
+
+.navigationItemsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3em;
+}
+
+.listItem {
+  color: rgba(128, 128, 128);
+  font-size: 1.5rem;
+}
+
+.personInformations {
+  display: flex;
+  align-items: center;
+  gap: 3.5em;
+}
