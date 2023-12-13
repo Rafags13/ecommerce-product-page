@@ -1,0 +1,80 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  padding-block: 2.5em;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+
+.backToTitle {
+  font-size: 2em;
+  font-weight: 700;
+  color: black;
+}
+
+.navigationItemsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3em;
+}
+
+.listItem {
+  color: rgba(128, 128, 128);
+  font-size: 1.5rem;
+}
+
+.personInformations {
+  display: flex;
+  align-items: center;
+  gap: 3.5em;
+}
+
+@media (max-width: 1200px) {
+  .headerContainer {
+    flex-direction: column;
+    gap: 2.5em;
+    align-items: center;
+  }
+  .navContainer {
+    gap: 2.5em;
+    flex-direction: column;
+  }
+  .navigationItemsContainer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .headerContainer {
+    flex-direction: row;
+    padding: 1em;
+  }
+  .navigationItemsContainer {
+    display: none;
+  }
+  .personInformations {
+    gap: 2em;
+  }
+  .navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1em;
+  }
+  .backToTitle {
+    font-size: 1.75em;
+  }
+  .personInformations > img {
+    width: 2em;
+  }
+
+}
