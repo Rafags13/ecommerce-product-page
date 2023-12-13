@@ -41,3 +41,15 @@
     opacity: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 95%;
+      align-self: center;
+      margin-top: 3em;
+      border-radius: 10px;
+  }
+}

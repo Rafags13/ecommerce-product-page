@@ -15,7 +15,7 @@ export default function Sidenav({ closeSidenav }: SidenavProps) {
       </button>
       <ul>
         {navLinkItems.map(({ label, route }) => (
-          <Link to={route}><li className={styles['item-list']}>{label}</li></Link>
+          <Link to={route} key={route}><li className={styles['item-list']}>{label}</li></Link>
         ))}
       </ul>
     </aside>

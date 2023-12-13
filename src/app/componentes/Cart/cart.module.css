@@ -44,3 +44,10 @@ button:active > div > .cartItemsCounting {
   font-size: 1rem;
   z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .cartContainer {
+    position: static;
+  }
+}
+
