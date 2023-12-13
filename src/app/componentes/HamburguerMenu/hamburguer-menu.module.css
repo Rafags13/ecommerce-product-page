@@ -1,0 +1,14 @@
+.menu {
+  font-size: 2em;
+}
+
+.buttonMenu {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (min-width: 500px) {
+  .container {
+    display: none;
+  }
+}

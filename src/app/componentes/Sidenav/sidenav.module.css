@@ -1,0 +1,52 @@
+.sidenavContainer {
+  position: absolute;
+  left: 0;
+  background-color: white;
+  top: 0;
+  padding-block: 2em;
+  width: 7em;
+  padding-inline: 0.5em;
+  height: 100%;
+  z-index: 4;
+  animation: sidenavAppears 500ms ease-in-out 100ms both;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.close {
+  font-size: 1.5em;
+  color: #666;
+}
+
+.sidenavContainer > ul {
+  display: flex;
+  margin-top: 2.5em;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.item-list {
+  font-weight: bold;
+  color: #333;
+}
+
+@keyframes sidenavAppears {
+  0% {
+    width: 7em;
+    padding-inline: 0.5em;
+  }
+
+  100% {
+    width: 70dvw;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 500px) {
+  .sidenavContainer {
+    display: none;
+  }
+}
