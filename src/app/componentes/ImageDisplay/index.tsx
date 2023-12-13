@@ -19,7 +19,7 @@ export default function ImageDisplay({ imageSource, selected, ...props }: imageD
   return (
     <>
       {image ? (
-        <img className={styles.image} src={image} width={200} style={{ border: selected ? '3px solid #ff7d1a' : '3px solid transparent' }} {...props} />
+        <img className={styles.image} src={image} width={200} style={{ border: selected ? '3px solid #ff7d1a' : '3px solid transparent', opacity: selected ? '0.5' : '' }} {...props} />
       ) : null}
     </>
   )

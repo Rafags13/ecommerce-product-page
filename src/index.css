@@ -29,6 +29,16 @@ a {
   font-size: 1.5rem;
 }
 
+img {
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+img:hover {
+  opacity: 0.5;
+}
+
 @media (max-width: 1200px) {
   #root {
     padding-inline: 5em;

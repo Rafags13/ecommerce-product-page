@@ -24,7 +24,7 @@ export default function ImagesSelection() {
       <article className={styles.imageSelectionContainer}>
         {images.map((image) => (
           <ImageTouchable key={image} selectImage={() => { selectImage(image) }} >
-            <ImageDisplay width={100} className={styles.imageDisplay} imageSource={image} alt={'Image product'} selected={image === currentImage} />
+            <ImageDisplay width={100} imageSource={image} alt={'Image product'} selected={image === currentImage} />
           </ImageTouchable>
         ))}
       </article>
