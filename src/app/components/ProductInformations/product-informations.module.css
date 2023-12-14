@@ -64,6 +64,7 @@
   width: 100%;
   background-color: #ff7d1a;
   gap: 1em;
+  padding: 1em;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

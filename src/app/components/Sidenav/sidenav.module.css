@@ -26,11 +26,22 @@ button {
   margin-top: 2.5em;
   flex-direction: column;
   gap: 1.25em;
+  animation: itemsAppears 500ms linear 100ms both;
 }
 
 .item-list {
   font-weight: bold;
   color: #333;
+}
+
+@keyframes itemsAppears {
+  0% {
+    opacity: 0
+  }
+  
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes sidenavAppears {
