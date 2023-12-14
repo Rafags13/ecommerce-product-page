@@ -33,10 +33,10 @@
 .personInformations {
   display: flex;
   align-items: center;
-  gap: 3.5em;
+  gap: 2.5em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .headerContainer {
     flex-direction: column;
     gap: 2.5em;

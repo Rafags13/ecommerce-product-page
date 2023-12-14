@@ -2,8 +2,15 @@ import Button from '../Button'
 import ProductCount from '../ProductCount'
 import cart from '../../../../images/icon-cart.svg';
 import styles from './product-informations.module.css'
+import useBuy from '../../hooks/useBuy';
+import { useAppDispatch } from '../../redux/hooks';
+import { addItemInCart } from '../../redux/features/cart/cartSlice';
 
 export default function ProductInformations() {
+  const count = useBuy((state) => state.item.count);
+  const resetCounter = useBuy((state) => state.resetCounter);
+  const dispatch = useAppDispatch();
+
   return (
     <section className={styles.productInformationsContainer}>
       <h4 className={styles.mark}>SNEAKER COMPANY</h4>
@@ -23,7 +30,12 @@ export default function ProductInformations() {
       <article className={styles.buyMenu}>
         <ProductCount />
 
-        <Button onClick={() => { }} className={styles.buyButton}>
+        <Button onClick={() => {
+          if (count > 0) {
+            dispatch(addItemInCart({ count, name: "Fall Limited Edition Sneakers", unitaryPrice: 125 }));
+            resetCounter();
+          }
+        }} className={styles.buyButton}>
           <img src={cart} height={20} width={20} className={styles.cartWhite} />
 
           <span className={styles.buttonCartText}>Add To Cart</span>

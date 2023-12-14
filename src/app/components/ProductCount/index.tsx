@@ -1,30 +1,24 @@
-import { useState } from "react";
 import styles from './product-count.module.css';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import Button from "../Button";
+import useBuy from '../../hooks/useBuy';
 
 export default function ProductCount() {
-  const [count, setCount] = useState(0);
-  const increase = () => {
-    setCount(value => value + 1);
-  }
+  const increase = useBuy((state) => state.increaseNumberOfItem)
+  const count = useBuy((state) => state.item.count);
 
-  const decrease = () => {
-    if (count === 0) { return; }
-
-    setCount(value => value - 1);
-  }
+  const decrease = useBuy((state) => state.decreaseNumberOfItem);
 
   return (
     <div className={styles.countContaner}>
-      <Button onClick={decrease} className={styles.leftButton}>
+      <Button onClick={() => { decrease(1) }} className={styles.leftButton}>
         <FaMinus className={styles.icon} />
       </Button>
       <span className={styles.itemCount}>
         {count}
       </span>
-      <Button onClick={increase} className={styles.rightButton}>
+      <Button onClick={() => { increase(1) }} className={styles.rightButton}>
         <FaPlus className={styles.icon} />
       </Button>
     </div>

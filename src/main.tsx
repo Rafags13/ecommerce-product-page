@@ -9,6 +9,8 @@ import Men from './app/pages/Men';
 import Women from './app/pages/Women';
 import About from './app/pages/About';
 import Contact from './app/pages/Contact';
+import { store } from './app/redux/store';
+import { Provider } from 'react-redux'
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store} >
+
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

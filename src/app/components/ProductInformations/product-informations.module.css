@@ -69,6 +69,18 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.buyButton:active {
+  background-color: hsl(223, 64%, 98%);
+}
+
+.buyButton:active>.cartWhite{
+  filter: invert(67%) sepia(31%) saturate(7198%) hue-rotate(346deg) brightness(102%) contrast(104%);
+}
+
+.buyButton:active>.buttonCartText {
+  color: #ff7d1a;
+}
+
 .cartWhite {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(105%) contrast(500%);
 }

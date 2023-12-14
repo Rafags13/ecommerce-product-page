@@ -36,7 +36,7 @@ button.rightButton:active, button.leftButton:active {
 }
 
 button:active > .icon {
-  color: #c4c4c4;
+  color: white;
 }
 
 @media (max-width: 500px) {

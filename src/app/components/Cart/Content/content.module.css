@@ -4,7 +4,7 @@
   width: 25em;
   margin-top: 3em;
   background-color: white;
-  height: 30rem;
+  min-height: 15em;
   opacity: 100%;
   display: block;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -22,14 +22,30 @@
 
 .itemsContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
-  height: calc(100% - 5em);
+  min-height: 100%;
+  align-items: center;
 }
 
 .centeredText {
-  margin: auto;
+  margin-top: 1em;
   color: #666;
   font-weight: 700;
+}
+
+.cartList {
+  width: 100%;
+}
+
+.finishBuyButton {
+  width: 90%;
+  background-color: #ff7d1a;
+  font-size: 1em;
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 @keyframes showCart {

@@ -2,6 +2,10 @@ import { NavItem } from "../../app/model/dto/NavItem";
 
 export const navLinkItems: NavItem[] = [
   {
+    label: "Home",
+    route: ""
+  },
+  {
     label: 'Collections',
     route: '/collections'
   },

@@ -1,11 +1,11 @@
-import { CartItem } from '../../../model/dto/CartItem';
+import { useAppSelector } from '../../../redux/hooks';
+import Button from '../../Button';
+import CartCard from '../../CartCard';
 import styles from './content.module.css';
 
-type ContentCartProps = CartItem[];
-
-const items: ContentCartProps = []
-
 export default function Content() {
+  const items = useAppSelector((state) => state.cart.items);
+
   return (
     <div className={styles.container}>
       <section className={styles.titleContainer}>
@@ -15,11 +15,16 @@ export default function Content() {
         {items.length === 0 ? (
           <p className={styles.centeredText}>Your card is empty</p>
         ) : (
-          <article >
-            {items.map((item) => (
-              <div id={item.id.toString()}>{item.name}</div>
-            ))}
-          </article>
+          <>
+            <article className={styles.cartList}>
+              {items.map((item) => (
+                <CartCard {...item} key={item.name.toString()} />
+              ))}
+            </article>
+            <Button onClick={() => { }} className={styles.finishBuyButton}>
+              Checkout
+            </Button>
+          </>
         )}
       </section>
     </div>
