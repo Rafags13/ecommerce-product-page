@@ -18,13 +18,13 @@ export default function ImagesSelection() {
   return (
     <section className={styles.imageDisplayContainer}>
       <ImageTouchable selectImage={openImage}>
-        <ImageDisplay width={500} imageSource={currentImage} alt={'Image product'} />
+        <ImageDisplay imageSource={currentImage} alt={'Image product'} className={styles.fullImageDisplay} />
       </ImageTouchable>
 
       <article className={styles.imageSelectionContainer}>
         {images.map((image) => (
-          <ImageTouchable key={image} selectImage={() => { selectImage(image) }} >
-            <ImageDisplay width={100} imageSource={image} alt={'Image product'} selected={image === currentImage} />
+          <ImageTouchable className={styles.touchableMobile} key={image} selectImage={() => { selectImage(image) }} >
+            <ImageDisplay className={styles.itemDisplaySelect} imageSource={image} alt={'Image product'} selected={image === currentImage} />
           </ImageTouchable>
         ))}
       </article>

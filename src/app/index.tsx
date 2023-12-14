@@ -1,5 +1,6 @@
 import styles from './app.module.css';
-import ImagesSelection from './componentes/ImagesSelection';
+import ImagesSelection from './components/ImagesSelection';
+import ProductInformations from './components/ProductInformations';
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <main className={styles.main}>
       <ImagesSelection />
 
-
+      <ProductInformations />
     </main>
   )
 }

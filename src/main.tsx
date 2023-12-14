@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './app';
 import './index.css'
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
-import Header from './app/componentes/Header';
+import Header from './app/components/Header';
 import Collections from './app/pages/Collections';
 import Men from './app/pages/Men';
 import Women from './app/pages/Women';

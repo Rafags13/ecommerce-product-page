@@ -1,0 +1,48 @@
+.imageSelectionContainer {
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+.imageDisplayContainer {
+  width: 30em;
+}
+.itemDisplaySelect {
+  width: 100%;
+}
+
+.fullImageDisplay {
+  width: 30em;
+}
+
+@media (max-width: 1300px) {
+  .imageSelectionContainer {
+    align-items: center;
+  }
+  .imageDisplayContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .fullImageDisplay {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px ) {
+  /* .fullImageDisplay {
+      width: 100vw;
+    } */
+  .imageSelectionContainer {
+    display: none;
+  }
+}
