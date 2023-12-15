@@ -6,9 +6,10 @@ interface imageDisplayProps extends Omit<DetailedHTMLProps<ImgHTMLAttributes<HTM
   imageSource: string;
   selected?: boolean;
   className?: string;
+  displayOnly?: boolean
 }
 
-export default function ImageDisplay({ imageSource, selected, className = '', ...props }: imageDisplayProps) {
+export default function ImageDisplay({ imageSource, selected, className = '', displayOnly = false, ...props }: imageDisplayProps) {
   const [image, setImage] = useState();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function ImageDisplay({ imageSource, selected, className = '', ..
   return (
     <>
       {image ? (
-        <img className={`${styles.image} ${className}`} src={image} style={{ border: selected ? '3px solid #ff7d1a' : '3px solid transparent', opacity: selected ? '0.5' : '' }} {...props} />
+        <img className={`${styles.image} ${className}  ${(!displayOnly ? styles.hoverEffect : '')}`} src={image} style={{ border: selected ? '3px solid #ff7d1a' : '3px solid transparent', opacity: selected ? '0.75' : '' }} {...props} />
       ) : null}
     </>
   )

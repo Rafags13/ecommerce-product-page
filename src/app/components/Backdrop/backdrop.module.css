@@ -11,7 +11,7 @@
 }
 
 @media (min-width: 500px) {
-  .backdrop {
+  /* .backdrop {
     visibility: hidden;
-  }
+  } */
 }

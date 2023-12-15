@@ -67,5 +67,6 @@
       align-self: center;
       margin-top: 3em;
       border-radius: 10px;
+      z-index: 999;
   }
 }

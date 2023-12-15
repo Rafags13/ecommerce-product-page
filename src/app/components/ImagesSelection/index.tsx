@@ -1,33 +1,65 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import ImageDisplay from '../ImageDisplay';
-import ImageTouchable from '../ImageTouchable';
+import ImageTouchable from '../Image/ImageTouchable';
 import styles from './image-selection.module.css';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import Image from '../Image';
 
-const images: string[] = ['image-product-1', 'image-product-2', 'image-product-3', 'image-product-4'];
+type ImagesSelectionProps = {
+  images: string[],
+  currentImage?: string,
+  onClickDisplayImage?: () => void,
+}
 
-export default function ImagesSelection() {
-  const [currentImage, setCurrentImage] = useState(images[0]);
-  const openImage = useCallback(() => {
-    console.log('opening image');
-  }, []);
+export default function ImagesSelection({ images, currentImage, onClickDisplayImage = () => { } }: ImagesSelectionProps) {
+  const [manageCurrentImage, setManageCurrentImage] = useState(currentImage ?? images[0]);
+  const isMobile = useMediaQuery('(max-width: 500px)');
 
   const selectImage = useCallback((imageFromSelection: string) => {
-    setCurrentImage(imageFromSelection);
+    setManageCurrentImage(imageFromSelection);
   }, []);
+
+  useEffect(() => {
+    if (currentImage) {
+      setManageCurrentImage(currentImage);
+    }
+  }, [currentImage]);
 
   return (
     <section className={styles.imageDisplayContainer}>
-      <ImageTouchable selectImage={openImage}>
-        <ImageDisplay imageSource={currentImage} alt={'Image product'} className={styles.fullImageDisplay} />
-      </ImageTouchable>
+      {isMobile ? (
+        <>
+          <Image.Root className={styles.root}>
+            <Image.Arrows sendImageChangeByArrow={(currentIndexImage: number) => {
+              const currentImage = images[currentIndexImage];
 
-      <article className={styles.imageSelectionContainer}>
-        {images.map((image) => (
-          <ImageTouchable className={styles.touchableMobile} key={image} selectImage={() => { selectImage(image) }} >
-            <ImageDisplay className={styles.itemDisplaySelect} imageSource={image} alt={'Image product'} selected={image === currentImage} />
+              setManageCurrentImage(currentImage);
+            }}>
+              <Image.Display imageSource={manageCurrentImage} className={styles.imageSize} />
+            </Image.Arrows>
+
+          </Image.Root>
+        </>
+      ) : (
+        <>
+          <ImageTouchable selectImage={() => {
+            onClickDisplayImage();
+          }}>
+            <ImageDisplay imageSource={manageCurrentImage} alt={'Image product'} className={styles.fullImageDisplay} />
           </ImageTouchable>
-        ))}
-      </article>
+
+          <article className={styles.imageSelectionContainer}>
+            {images.map((image) => (
+              <ImageTouchable className={styles.touchableMobile} key={image} selectImage={() => { selectImage(image) }} >
+                <ImageDisplay className={styles.itemDisplaySelect} imageSource={image} alt={'Image product'} selected={image === manageCurrentImage} />
+              </ImageTouchable>
+            ))}
+          </article>
+        </>
+      )}
+
+
+
     </section>
   )
 }

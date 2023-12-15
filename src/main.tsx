@@ -11,6 +11,7 @@ import About from './app/pages/About';
 import Contact from './app/pages/Contact';
 import { store } from './app/redux/store';
 import { Provider } from 'react-redux'
+import ModalProvider from './app/context/modalContext';
 
 const router = createBrowserRouter([
   {
@@ -48,8 +49,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store} >
-
-      <RouterProvider router={router} />
+      <ModalProvider>
+        <RouterProvider router={router} />
+      </ModalProvider>
     </Provider>
   </React.StrictMode>,
 )

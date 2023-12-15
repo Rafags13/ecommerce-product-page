@@ -1,0 +1,52 @@
+.centerLightBox {
+  border: none;
+  outline-width: 0;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.rootLightBox {
+  display: flex;
+  background-color: transparent;
+  margin-inline: 1em;
+  /* width: 33em; */
+}
+
+.fullImageDisplay {
+  width: 30em;
+}
+
+.centerLightBox::backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+  transition: color 0.2s ease;
+}
+
+.closeIcon:hover > .icon {
+  color: #ff7d1a;
+}
+
+.closeIcon:active > .icon {
+  color: #c4c4c4;
+}
+
+.closeIcon {
+  align-self: flex-end;
+  margin-left: auto;
+  color: white;
+  font-size: 2em;
+}
+
+@media (max-width: 1300px) {
+  .fullImageDisplay {
+    width: 100%;
+  }
+}

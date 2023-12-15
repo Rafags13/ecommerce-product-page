@@ -15,8 +15,18 @@
   width: 100%;
 }
 
+.imageSize {
+  width: 100%;
+}
+
 .fullImageDisplay {
   width: 30em;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 @media (max-width: 1300px) {
@@ -39,10 +49,10 @@
 }
 
 @media (max-width: 500px ) {
-  /* .fullImageDisplay {
-      width: 100vw;
-    } */
   .imageSelectionContainer {
     display: none;
+  }
+  .imageDisplayContainer.root{
+    width: 100%;
   }
 }
