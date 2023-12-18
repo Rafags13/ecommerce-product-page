@@ -30,7 +30,7 @@ export default function ImagesSelection({ images, currentImage, onClickDisplayIm
       {isMobile ? (
         <>
           <Image.Root className={styles.root}>
-            <Image.Arrows sendImageChangeByArrow={(currentIndexImage: number) => {
+            <Image.Arrows isMobile sendImageChangeByArrow={(currentIndexImage: number) => {
               const currentImage = images[currentIndexImage];
 
               setManageCurrentImage(currentImage);

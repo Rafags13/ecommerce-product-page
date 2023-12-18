@@ -1,25 +1,21 @@
-import { SyntheticEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from './lightbox.module.css';
 import useModalContext from "../../hooks/useModalContext";
 import Image from "../Image";
 import Button from "../Button";
 import { IoClose } from "react-icons/io5";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const images: string[] = ['image-product-1', 'image-product-2', 'image-product-3', 'image-product-4'];
 
 export default function LightBox() {
   const { modalState, toggle } = useModalContext();
   const [currentImage, setCurrentImage] = useState(images[0]);
+  const isMobile = useMediaQuery('(max-width: 500px)')
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
-  function closeModal(event: SyntheticEvent) {
-    if (!(event.target instanceof HTMLDialogElement)) return;
-
-    toggle();
-  }
-
   useEffect(() => {
-    if (modalState) {
+    if (modalState && !isMobile) {
       console.log('abri')
       modalRef?.current?.showModal();
     } else {
@@ -30,11 +26,11 @@ export default function LightBox() {
     return () => {
       setCurrentImage(images[0]);
     }
-  }, [modalState, modalRef])
+  }, [modalState, isMobile])
 
 
   return (
-    <dialog ref={ref => modalRef.current = ref} className={styles.centerLightBox} onClick={(event) => closeModal(event)}>
+    <dialog ref={ref => modalRef.current = ref} className={styles.centerLightBox} >
       <Button onClick={() => { toggle(); }} className={styles.closeIcon}>
         <IoClose className={styles.icon} />
       </Button>

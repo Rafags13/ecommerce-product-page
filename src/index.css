@@ -7,6 +7,10 @@
   font-family: 'Kumbh Sans', sans-serif;
 }
 
+:root {
+  --orange: #ff7d1a;
+}
+
 html {
   font-size: 62.5%;
 }

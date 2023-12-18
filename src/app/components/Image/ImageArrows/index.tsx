@@ -6,7 +6,13 @@ import styles from './image-arrows.module.css';
 
 const imagesIndex: number[] = [0, 1, 2, 3];
 
-export default function ImageArrows({ children, sendImageChangeByArrow }: { children: ReactNode, sendImageChangeByArrow: (currentSelectIndexImage: number) => void }) {
+type ImageArrowsProps = {
+  children: ReactNode,
+  sendImageChangeByArrow: (currentSelectIndexImage: number) => void,
+  isMobile?: boolean
+}
+
+export default function ImageArrows({ children, sendImageChangeByArrow, isMobile = false }: ImageArrowsProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(imagesIndex[0]);
 
   const decrease = () => {
@@ -30,7 +36,9 @@ export default function ImageArrows({ children, sendImageChangeByArrow }: { chil
         <IoIosArrowBack className={`
         ${styles.icon}
         ${currentImageIndex === imagesIndex[0] ? styles.disabled : styles.canPass}
-        `} />
+        `}
+          style={{ marginLeft: isMobile ? '35px' : '' }}
+        />
       </Button>
       {children}
       <Button onClick={() => {
@@ -40,7 +48,9 @@ export default function ImageArrows({ children, sendImageChangeByArrow }: { chil
         <IoIosArrowForward className={`
         ${styles.icon} 
         ${currentImageIndex === imagesIndex[imagesIndex.length - 1] ? styles.disabled : styles.canPass}
-        `} />
+        `}
+          style={{ marginRight: isMobile ? '35px' : '' }}
+        />
       </Button>
     </>
   )
