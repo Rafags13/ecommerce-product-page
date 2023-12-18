@@ -1,7 +1,7 @@
 .sidenavContainer {
   position: absolute;
   left: 0;
-  background-color: white;
+  background-color: var(--white);
   top: 0;
   padding-block: 2em;
   width: 7em;
@@ -18,7 +18,7 @@ button {
 
 .close {
   font-size: 1.5em;
-  color: #666;
+  color: var(--middle-gray);
 }
 
 .sidenavContainer > ul {
@@ -26,11 +26,22 @@ button {
   margin-top: 2.5em;
   flex-direction: column;
   gap: 1.25em;
+  animation: itemsAppears 500ms linear 100ms both;
 }
 
 .item-list {
   font-weight: bold;
-  color: #333;
+  color: var(--gray);
+}
+
+@keyframes itemsAppears {
+  0% {
+    opacity: 0
+  }
+  
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes sidenavAppears {

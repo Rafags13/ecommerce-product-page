@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+}
+
+.itemInformations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: space-between;
+}
+
+.icon {
+  color: var(--light-grayish-blue);
+  font-size: 1.25em;
+  
+  
+  width: 100%;
+}
+
+.priceContainer {
+  display: flex;
+  gap: 0.5em;
+  
+}
+
+.calculationText {
+  color: var(--middle-gray);
+}
+
+.finalCalculationText {
+  font-weight: bold;
+  color: var(--black);
+}

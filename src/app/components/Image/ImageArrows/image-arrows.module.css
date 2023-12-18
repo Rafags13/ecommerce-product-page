@@ -1,0 +1,20 @@
+.canPass {
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+.canPass:hover {
+  color: var(--orange);
+}
+
+.icon {
+  background-color: var(--white);
+  border-radius: 50px;
+  position: absolute;
+  font-size: 2em;
+  z-index: 5;
+}
+
+.disabled {
+  color: var(--light-gray);
+}

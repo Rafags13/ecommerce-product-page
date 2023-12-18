@@ -7,11 +7,5 @@
   display: block;
   z-index: 3;
   visibility: visible;
-    background-color: rgba(0, 0, 0, .6);
-}
-
-@media (min-width: 500px) {
-  .backdrop {
-    visibility: hidden;
-  }
+  background-color: var(--backdrop);
 }

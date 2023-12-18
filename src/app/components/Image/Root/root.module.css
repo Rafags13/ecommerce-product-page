@@ -1,0 +1,9 @@
+.imageDisplayContainer {
+  width: 30em;
+}
+
+@media (max-width: 500px) {
+  .imageDisplayContainer {
+    width: 100%;
+  }
+}

@@ -23,23 +23,20 @@ button > div > .cartItemsCounting {
   transition: all 0.5s;
 }
 
-button:active > div > img{
-  filter: invert(52%) sepia(66%) saturate(1054%) hue-rotate(345deg) brightness(100%) contrast(105%);
-}
 
 button:active > div > .cartItemsCounting {
-  background-color: white;
-  color: #ff7d1a;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--white);
+  color: var(--orange);
+  box-shadow: var(--shadow);
 }
 
 .cartItemsCounting {
   position: absolute;
   margin-left: 1em;
   margin-top: -0.5em;
-  background-color: #ff7d1a;
+  background-color: var(--orange);
   padding-inline: 0.75em;
-  color: white;
+  color: var(--white);
   border-radius: 5em;
   font-size: 1rem;
   z-index: 2;

@@ -1,0 +1,126 @@
+.productInformationsContainer {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 30em;
+  gap: 1.5em;
+}
+
+.mark {
+  color: var(--second-orange);
+  font-size: 0.8em;
+  letter-spacing: 2px;
+}
+
+.productTitle {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.productDescription {
+  color: var(--middle-gray);
+}
+
+
+.priceInformationsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.pricesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.priceWithDiscout{
+  font-size: 2em;
+}
+
+.discount {
+  background-color: var(--second-white);
+  padding-block: 0.25em;
+  padding-inline: 0.5em;
+  font-weight: bold;
+  border-radius: 4px;
+  color: var(--second-orange);
+}
+
+.originalPrice {
+  text-decoration-line: line-through;
+  font-size: 0.9em;
+  color: var(--light-middle-gray);
+  font-weight: bold;
+}
+
+.buyMenu {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.buyButton {
+  width: 100%;
+  background-color: var(--orange);
+  gap: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.buyButton:active {
+  background-color: var(--light-blue);
+}
+
+.buyButton:active>.cartWhite{
+  filter: var(--cart-svg-active);
+}
+
+.buyButton:active>.buttonCartText {
+  color: var(--orange);
+}
+
+.cartWhite {
+  filter: var(--cart-svg-inactive);
+}
+
+.buttonCartText {
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 1300px) {
+  .productInformationsContainer {
+    max-width: 100%;
+    text-align: center;
+  }
+  .priceInformationsContainer {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .productInformationsContainer {
+    text-align: left;
+    padding: 1.5em;
+  }
+
+  .productTitle {
+    font-size: 2em;
+  }
+
+  .pricesContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .priceInformationsContainer {
+    justify-content: flex-start;
+  }
+  .buyMenu {
+    flex-direction: column;
+  }
+}
