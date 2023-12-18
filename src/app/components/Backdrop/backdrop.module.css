@@ -7,5 +7,5 @@
   display: block;
   z-index: 3;
   visibility: visible;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: var(--backdrop);
 }

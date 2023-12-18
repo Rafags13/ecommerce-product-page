@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsl(223, 64%, 98%);
+  background-color: var(--light-blue);
   border-radius: 10px;
   width: 60%;
 }
@@ -12,7 +12,7 @@
 }
 
 button > .icon {
-  color: #ef8838;
+  color: var(--orange);
   font-size: 1em;
   transition: color 0.2s linear;
 }
@@ -32,11 +32,11 @@ border-top-right-radius: 10px;
 }
 
 button.rightButton:active, button.leftButton:active {
-  background-color: #ef8838;
+  background-color: var(--orange);
 }
 
 button:active > .icon {
-  color: white;
+  color: var(--white);
 }
 
 @media (max-width: 500px) {

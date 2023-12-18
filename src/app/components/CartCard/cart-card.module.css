@@ -16,7 +16,7 @@
 }
 
 .icon {
-  color: #C7D0DE;
+  color: var(--light-grayish-blue);
   font-size: 1.25em;
   
   
@@ -30,10 +30,10 @@
 }
 
 .calculationText {
-  color: #666;
+  color: var(--middle-gray);
 }
 
 .finalCalculationText {
   font-weight: bold;
-  color: black;
+  color: var(--black);
 }

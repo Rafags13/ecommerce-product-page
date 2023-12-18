@@ -8,7 +8,22 @@
 }
 
 :root {
+  --black: black;
+  --color-line: #80808040;
+  --gray: #333;
+  --middle-gray: #666;
+  --light-middle-gray: #99999980;
+  --light-gray: #c4c4c4;
+  --light-blue: #f7f8fd;
   --orange: #ff7d1a;
+  --second-orange: #F47F26;
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --backdrop: rgba(0, 0, 0, .6);
+  --white: white;
+  --second-white: #ffede0;
+  --light-grayish-blue: #C7D0DE;
+  --cart-svg-inactive: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(105%) contrast(500%);
+  --cart-svg-active: invert(67%) sepia(31%) saturate(7198%) hue-rotate(346deg) brightness(102%) contrast(104%);
 }
 
 html {
@@ -29,7 +44,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgba(128, 128, 128);
+  color: rgba(var(--color-line), 1);
   font-size: 1.5rem;
 }
 

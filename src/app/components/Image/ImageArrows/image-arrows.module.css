@@ -1,14 +1,14 @@
 .canPass {
-  color: black;
+  color: var(--black);
   transition: color 0.2s ease;
 }
 
 .canPass:hover {
-  color: #ff7d1a;
+  color: var(--orange);
 }
 
 .icon {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50px;
   position: absolute;
   font-size: 2em;
@@ -16,5 +16,5 @@
 }
 
 .disabled {
-  color: #c4c4c4;
+  color: var(--light-gray);
 }

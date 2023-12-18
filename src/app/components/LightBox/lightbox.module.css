@@ -14,16 +14,19 @@
   display: flex;
   background-color: transparent;
   margin-inline: 1em;
-  /* width: 33em; */
 }
 
 .fullImageDisplay {
   width: 30em;
 }
 
+::backdrop {
+  --backdrop: rgba(0, 0, 0, .6);
+}
+
 .centerLightBox::backdrop {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--backdrop);
 }
 
 .icon {
@@ -31,17 +34,17 @@
 }
 
 .closeIcon:hover > .icon {
-  color: #ff7d1a;
+  color: var(--orange);
 }
 
 .closeIcon:active > .icon {
-  color: #c4c4c4;
+  color: var(--light-gray);
 }
 
 .closeIcon {
   align-self: flex-end;
   margin-left: auto;
-  color: white;
+  color: var(--white);
   font-size: 2em;
 }
 
